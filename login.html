@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./utils/login.js" defer></script>
+  </head>
+
+  <body
+    style="
+      background-image: url(./bg.jpg);
+      font-family: 'Manrope', sans-serif;
+      font-size: 18px;
+      color: #444;
+    "
+    class="bg-cover bg-center flex justify-center items-center h-screen w-full"
+  >
+    <!-- Login modal -->
+    <form
+      id="login_modal"
+      onsubmit="loginRequest(event)"
+      class="lg:max-w-md mx-3 lg:mx-0 w-full my-2.5 bg-white rounded-md lg:p-10 p-5 flex flex-col"
+    >
+      <h2 class="text-2xl">Вход</h2>
+      <input
+        type="text"
+        name="phone_number"
+        placeholder="Номер телефона"
+        style="border-width: 3px"
+        class="py-2.5 lg:text-lg text-sm px-3 w-full mt-5 border rounded-md border-black focus:border-[#5451f6] outline-0"
+      />
+      <input
+        type="text"
+        name="password"
+        placeholder="Пароль"
+        style="border-width: 3px"
+        class="py-2.5 lg:text-lg text-sm px-3 w-full lg:mt-5 mt-3 border rounded-md border-black focus:border-[#5451f6] outline-0"
+      />
+      <!-- <p class="mt-3">
+        забыл пароль?
+        <a class="text-[#5451F6]" href="./recovery password.html"
+          >Восстановление</a
+        >
+      </p> -->
+      <button
+        class="w-full text-center py-3 bg-black text-sm lg:text-lg text-white rounded-md lg:mt-4 mt-3"
+      >
+        Войти
+      </button>
+      <p class="text-[#7D7D7D] text-sm text-center lg:text-lg lg:mt-5 mt-3">
+        Нет аккаунта? <button id="register_link" class="text-[#5451F6]">Регистрация</button>
+      </p>
+    </form>
+
+    <!-- Verification moda When user did not verified -->
+    <form
+      id="verification_modal"
+      onsubmit="confirmHandler(event)"
+      class="lg:max-w-md mx-3 hidden lg:mx-0 w-full my-2.5 bg-white rounded-md lg:p-10 p-5 flex flex-col"
+    >
+      <h2 class="text-2xl">Регистрация</h2>
+      <p class="lg:mt-5 mt-2.5 text-sm lg:text-lg text-[#7D7D7D]">
+        Введите код отправленный на ваш номер
+      </p>
+      <input
+        type="text"
+        placeholder="Код"
+        name="code"
+        style="border-width: 3px"
+        class="py-2.5 lg:text-lg text-sm px-3 w-full mt-2 border rounded-md border-black focus:border-[#5451f6] outline-0"
+      />
+      <button
+        class="w-full text-center py-3 bg-black text-sm lg:text-lg text-white rounded-md lg:mt-5 mt-3"
+      >
+        Продолжить
+      </button>
+      <p class="text-[#7D7D7D] text-center text-sm lg:text-lg lg:mt-5 mt-3">
+        Уже есть аккаунт? <a class="text-[#5451F6]" href="#">Войти</a>
+      </p>
+    </form>
+  </body>
+</html>
